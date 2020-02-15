@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Enrollment
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card class="welcome-card" *ngFor="let img of images">
+          <img src="{{img.data}}" alt="" />
+          <ion-row no-padding>
+            <ion-col text-right>
+              <ion-button fill="clear" size="small" color="danger" (click)="remove(img.id)" icon-start>
+                <ion-icon name='trash'></ion-icon>
+                Delete
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer no-shadow>
+  <ion-row no-padding>
+    <ion-col text-right>
+      <ion-button size="large" expand="full" shape="block" (click)="imageCapture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col text-left *ngIf="images.length > 0">
+      <ion-button size="large" expand="full" shape="block" (click)="uploadImages()">
+        <ion-icon name="cloud-upload"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  
+	
+   
+</ion-footer>
